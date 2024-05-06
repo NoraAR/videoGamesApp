@@ -17,3 +17,5 @@ with tabs[0]:
 # Contenido de la pestaña 2
 with tabs[1]:
     st.write("Contenido de la pestaña 2")
+    st.write("Contenido de la pestaña 2")
+    
