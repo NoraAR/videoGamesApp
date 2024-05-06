@@ -1,7 +1,19 @@
 import streamlit as st
-st.title('Mi primera aplicacion en la web')
+import src.data as data
+import src.graficos as graficos
 
-nombre = st.text_input('Cual es tu nombre?')
+st.title('videoGamesApp')
+st.divider()
+st.header('The dataset is:')
+st.write(data.readData())
 
-if nombre is not None:
-    st.write(f'Bienvenido {nombre} a mi primera app web')
+# Crear pestañas
+tabs = st.tabs(["General Sales", "Platform Sales", ""])
+
+# Contenido de la pestaña 1
+with tabs[0]:
+    graficos.histogram(2014)
+
+# Contenido de la pestaña 2
+with tabs[1]:
+    st.write("Contenido de la pestaña 2")
