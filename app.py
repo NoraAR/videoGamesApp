@@ -1,15 +1,29 @@
 import streamlit as st
 import src.data as data
-import src.graficos as graficos
-
+import src.graphics as graphics
+import src.generatePDF as reportPDF
 st.title('videoGamesApp')
 st.divider()
 st.header('The dataset is:')
 st.write(data.readData())
 
 # Crear pestañas
-tabs = st.tabs(["General Sales", "Platform Sales", ""])
+year = st.selectbox('Year: ',options= data.obtain_years())
 
-# Contenido de la pestaña 1
+tabs = st.tabs(["Platform Sales", "Genres Sales", "Top 10 Videogames", "Reports"])
+col1,col2 = st.columns(2)
 with tabs[0]:
-    graficos.histogram(2014)
+    graphics.general_diagrams()
+with tabs[1]:
+    graphics.pie_diagrams(year)
+with tabs[2]:
+    graphics.top_videogames(year)
+with tabs[3]:
+    
+    pdf = reportPDF.create_report(year)
+    st.divider()
+    col_1,col_2 = st.columns(2)
+    html = reportPDF.create_download_link(pdf.output(dest="S").encode("latin-1"), f"Reporte_{year}")
+    col_1.markdown(html, unsafe_allow_html=True)
+
+    
