@@ -7,7 +7,7 @@ def readData():
     return base
 
 def obtain_years():
-    base = readData()  # Suponiendo que readData() carga tus datos
+    base = readData() 
     base = base.sort_values(by='Year', ascending=False)
     base['Year'] = base['Year'].astype(int) 
     years = list(base['Year'].unique())
