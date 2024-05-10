@@ -26,4 +26,5 @@ with tabs[3]:
     html = reportPDF.create_download_link(pdf.output(dest="S").encode("latin-1"), f"Reporte_{year}")
     col_1.markdown(html, unsafe_allow_html=True)
 
+
     
