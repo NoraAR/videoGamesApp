@@ -24,7 +24,7 @@ class PDFWithBackground(FPDF):
 
 def create_report(year):    
     pdf = PDFWithBackground()
-    pdf.set_background('C:\Cursos\Python\videoGamesApp\Images\StyleSheet.png')
+    pdf.set_background('Images/StyleSheet.png')
 
     # pdf.add_page()
 
