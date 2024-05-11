@@ -61,7 +61,7 @@ def create_report(year):
     pdf.add_page()
     pdf.set_y(50)
     pdf.set_font('Courier',style='B',size=27)   # Arial, Times, Courier
-    pdf.cell(0,0,'Videogames Sales by platform',0,1,'C')
+    pdf.cell(0,0,'Global VideoGames Sales Trends by Region',0,1,'C')
     pdf.image(f'Images/Global_VideoGames_Sales_Trends_by_Region.png',x=10,y=75,w=200,h=150)
     pdf.add_page()
     pdf.set_y(45)
